@@ -1,5 +1,6 @@
 #using image(blueprint) to set in docker
-FROM python:3.9-slim  #slim only downloads specific libraries
+#slim only downloads specific libraries
+FROM python:3.12-slim  
 
 #creating a directory in docker
 WORKDIR /app
@@ -13,6 +14,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 #setting env variable
-ENV FLASK_APP = app.py
+ENV FLASK_APP=app.py
 
-CMD ["python","run","--host=0.0.0.0"]
+CMD ["python","app.py","--host=0.0.0.0"]
